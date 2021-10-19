@@ -9,7 +9,7 @@ public class ScoreAdapterFactory {
     public static ScoreboardAdapter getAdapter(Player playerOne, Player playerTwo) {
         ScoreboardAdapter adapter;
         if (isDrawScore(playerOne, playerTwo)) {
-            adapter = new DrawScoreAdapter(playerOne, playerTwo);
+            adapter = new DrawScoreboardAdapter(playerOne, playerTwo);
         } else if (isAdvantageScore(playerOne, playerTwo)) {
             adapter = new AdvantageScoreboardAdapter(playerOne, playerTwo);
         } else if (isWinScore(playerOne, playerTwo)) {

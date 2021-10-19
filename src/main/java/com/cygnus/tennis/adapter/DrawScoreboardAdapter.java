@@ -2,8 +2,8 @@ package com.cygnus.tennis.adapter;
 
 import com.cygnus.tennis.entity.Player;
 
-public class DrawScoreAdapter extends ScoreboardAdapter {
-    public DrawScoreAdapter(Player playerOne, Player playerTwo) {
+public class DrawScoreboardAdapter extends ScoreboardAdapter {
+    public DrawScoreboardAdapter(Player playerOne, Player playerTwo) {
         super(playerOne, playerTwo);
     }
 
