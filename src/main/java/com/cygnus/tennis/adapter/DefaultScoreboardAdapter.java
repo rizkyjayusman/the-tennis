@@ -2,26 +2,14 @@ package com.cygnus.tennis.adapter;
 
 import com.cygnus.tennis.entity.Player;
 
-public class BaseScoreAdapter {
+public class DefaultScoreboardAdapter extends ScoreboardAdapter {
 
-    private final Player playerOne;
-    private final Player playerTwo;
-
-    public BaseScoreAdapter(Player playerOne, Player playerTwo) {
-        this.playerOne = playerOne;
-        this.playerTwo = playerTwo;
-    }
-
-    public Player getPlayerOne() {
-        return playerOne;
-    }
-
-    public Player getPlayerTwo() {
-        return playerTwo;
+    public DefaultScoreboardAdapter(Player playerOne, Player playerTwo) {
+        super(playerOne, playerTwo);
     }
 
     public String getScore() {
-        return getScore(playerOne) + "-" + getScore(playerTwo);
+        return getScore(getPlayerOne()) + "-" + getScore(getPlayerTwo());
     }
 
     public String getScore(Player player) {

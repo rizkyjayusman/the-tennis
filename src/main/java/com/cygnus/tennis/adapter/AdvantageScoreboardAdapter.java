@@ -4,8 +4,8 @@ import com.cygnus.tennis.entity.Player;
 
 import static com.cygnus.tennis.util.ScoreUtil.subtractPlayerScore;
 
-public class WinScoreAdapter extends BaseScoreAdapter {
-    public WinScoreAdapter(Player playerOne, Player playerTwo) {
+public class AdvantageScoreboardAdapter extends ScoreboardAdapter {
+    public AdvantageScoreboardAdapter(Player playerOne, Player playerTwo) {
         super(playerOne, playerTwo);
     }
 
@@ -13,10 +13,10 @@ public class WinScoreAdapter extends BaseScoreAdapter {
     public String getScore() {
         StringBuilder score = new StringBuilder();
         int minusResult = subtractPlayerScore(getPlayerOne(), getPlayerTwo());
-        if (minusResult >= 2) {
-            score.append("Win for ").append(getPlayerOne().getName());
-        } else if (minusResult <= -2) {
-            score.append("Win for ").append(getPlayerTwo().getName());
+        if (minusResult == 1) {
+            score.append("Advantage ").append(getPlayerOne().getName());
+        } else if (minusResult == -1) {
+            score.append("Advantage ").append(getPlayerTwo().getName());
         }
 
         return score.toString();

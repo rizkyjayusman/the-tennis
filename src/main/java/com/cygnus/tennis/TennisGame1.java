@@ -1,7 +1,7 @@
 package com.cygnus.tennis;
 
-import com.cygnus.tennis.adapter.BaseScoreAdapter;
 import com.cygnus.tennis.adapter.ScoreAdapterFactory;
+import com.cygnus.tennis.adapter.ScoreboardAdapter;
 import com.cygnus.tennis.entity.Player;
 
 public class TennisGame1 implements TennisGame {
@@ -19,11 +19,13 @@ public class TennisGame1 implements TennisGame {
             playerOne.increasePoint();
         } else if (playerName.equals("player2")) {
             playerTwo.increasePoint();
+        } else {
+            throw new RuntimeException("player unknown");
         }
     }
 
     public String getScore() {
-        BaseScoreAdapter adapter = ScoreAdapterFactory.getAdapter(playerOne, playerTwo);
+        ScoreboardAdapter adapter = ScoreAdapterFactory.getAdapter(playerOne, playerTwo);
         return adapter.getScore();
     }
 }
